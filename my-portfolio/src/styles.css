@@ -1,8 +1,13 @@
 body {
   font-family: 'Source Code Pro', monospace;
-  background-color: #f8f9fa;
   margin: 0;
   padding: 0;
+  background: #f7f7f7;
+}
+
+.app-layout {
+  display: flex;
+  height: 100vh;
 }
 
 .sidebar {
@@ -10,6 +15,12 @@ body {
   background-color: #eeeeee;
   padding: 1rem;
   border-right: 1px solid #ccc;
+}
+
+.main-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .menu-bar {
@@ -23,19 +34,38 @@ body {
   color: #333;
 }
 
+.menu-bar span {
+  cursor: pointer;
+}
+
+.menu-bar span:hover {
+  text-decoration: underline;
+}
+
 .toolbar {
   background-color: #f0f0f0;
   border-bottom: 1px solid #ccc;
   padding: 0.5rem 1rem;
   display: flex;
   gap: 0.5rem;
-  position: sticky;
-  top: 40px;
-  z-index: 10;
+}
+
+.toolbar button {
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  border: none;
+  background: #e0e0e0;
+  border-radius: 4px;
+}
+
+.toolbar button:hover {
+  background: #d5d5d5;
 }
 
 .notebook {
   padding: 2rem;
+  overflow-y: auto;
 }
 
 .notebook-cell {
@@ -48,7 +78,6 @@ body {
   background: #fff;
   border: 1px solid #ddd;
   padding: 1rem;
-  overflow-x: auto;
 }
 
 .output-cell {
@@ -58,6 +87,6 @@ body {
 }
 
 .markdown-cell {
-  font-size: 1rem;
   font-weight: bold;
+  font-size: 1.2rem;
 }
