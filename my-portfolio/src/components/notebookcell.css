@@ -1,0 +1,26 @@
+/* src/components/NotebookCell.css */
+.cell {
+    border-left: 4px solid #4c4cff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-family: 'Fira Code', monospace;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+  }
+  
+  .markdown-cell {
+    background-color: black;
+    font-size: 1.1rem;
+  }
+  
+  .code-cell {
+    background-color: black;
+    color: #333;
+    overflow-x: auto;
+  }
+  
+  .output-cell {
+    background-color: black;
+    color: #1a4d1a;
+  }
+  
