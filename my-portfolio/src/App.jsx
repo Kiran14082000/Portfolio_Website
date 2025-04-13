@@ -14,8 +14,25 @@ function App() {
         <MenuBar />
         <Toolbar />
         <Notebook />
+        <div style={{
+  backgroundColor: '#eeeeee',
+  borderTop: '1px solid #ccc',
+  padding: '6px 12px',
+  fontSize: '0.8rem',
+  color: '#444',
+  fontFamily: 'monospace',
+  display: 'flex',
+  justifyContent: 'space-between'
+}}>
+  <span>Python [conda env:base]</span>
+  <span>Idle</span>
+</div>
+
       </div>
+      
     </div>
+    
+    
   );
 }
 

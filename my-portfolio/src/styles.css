@@ -67,6 +67,35 @@ body {
   padding: 2rem;
   overflow-y: auto;
 }
+.project-cell {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  transition: box-shadow 0.2s ease, border 0.2s ease;
+}
+
+.project-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.project-code {
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 6px;
+  font-family: 'Source Code Pro', monospace;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  overflow-x: auto;
+}
+
+.project-desc {
+  font-size: 0.95rem;
+  color: #444;
+}
 
 .notebook-cell {
   border-left: 3px solid #ccc;
