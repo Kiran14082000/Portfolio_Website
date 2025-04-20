@@ -1,55 +1,27 @@
-// src/components/NotebookCell.jsx
-import React, { useState } from 'react';
-import ReactMarkdown from 'react-markdown';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
+import CodeCell from "./CodeCell";
+import MarkdownCell from "./MarkdownCell";
+import OutputCell from "./OutputCell";
 
-const NotebookCell = ({ type, content, cellIndex }) => {
-  const [collapsed, setCollapsed] = useState(false);
+const NotebookCell = ({ type, content }) => {
+  const render = () => {
+    if (type === "code") return <CodeCell code={content} />;
+    if (type === "markdown") return <MarkdownCell text={content} />;
+    if (type === "output") return <OutputCell output={content} />;
+    return null;
+  };
 
   return (
     <motion.div
-  className="notebook-cell"
-  layout
-  initial={{ opacity: 0, y: 40 }}
+  initial={{ opacity: 0, y: 10 }}
   animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.4, ease: 'easeOut' }}
-  whileHover={{
-    scale: 1.015,
-    borderColor: "orange",
-    boxShadow: "0 8px 18px rgba(0, 123, 255, 0.15)",
-  }}
+  transition={{ duration: 0.4 }}
+  className="bg-zinc-800 p-5 rounded-md border border-zinc-500 hover:border-blue-400 transition-colors duration-200 shadow-sm"
 >
-      {/* Cell header with label and button */}
-      <div className="cell-toolbar">
-        <span className="cell-label">
-          {type === 'code' && `In [${cellIndex}]:`}
-          {type === 'output' && `Out [${cellIndex}]:`}
-        </span>
-        <div className="cell-buttons">
-          <button onClick={() => setCollapsed(!collapsed)}>🔽</button>
-        </div>
-      </div>
+  {render()}
+</motion.div>
 
-      {!collapsed && (
-        <div className="cell-content">
-          {type === 'markdown' && (
-            <div className="markdown-cell">
-              <ReactMarkdown>{content}</ReactMarkdown>
-            </div>
-          )}
-          {type === 'code' && (
-            <pre className="code-cell">
-              <code>{content}</code>
-            </pre>
-          )}
-          {type === 'output' && (
-            <div className="output-cell">
-              <pre>{content}</pre>
-            </div>
-          )}
-        </div>
-      )}
-    </motion.div>
   );
 };
 
