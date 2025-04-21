@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import CodeCell from "./CodeCell";
 import MarkdownCell from "./MarkdownCell";
 import OutputCell from "./OutputCell";
+import "../NotebookCell.css";
 
 const NotebookCell = ({ type, content }) => {
   const render = () => {
@@ -14,14 +15,13 @@ const NotebookCell = ({ type, content }) => {
 
   return (
     <motion.div
-  initial={{ opacity: 0, y: 10 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.4 }}
-  className="bg-zinc-800 p-5 rounded-md border border-zinc-500 hover:border-blue-400 transition-colors duration-200 shadow-sm"
->
-  {render()}
-</motion.div>
-
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+      className="notebook-wrapper"
+    >
+      {render()}
+    </motion.div>
   );
 };
 

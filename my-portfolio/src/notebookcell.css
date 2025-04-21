@@ -1,35 +1,41 @@
-/* src/components/NotebookCell.css */
-.cell {
-    border-left: 4px solid #4c4cff;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    font-family: 'Fira Code', monospace;
-    background-color: #f8f8f8;
-    border-radius: 5px;
-  }
-  .notebook-cell {
-    background: #fff;
-    border: 1px solid #ddd;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    border-radius: 10px;
-    transition: border 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-  }
-  
+.notebook-wrapper {
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
 
-  .markdown-cell {
-    background-color: black;
-    font-size: 1.1rem;
-  }
-  
-  .code-cell {
-    background-color: black;
-    color: #333;
-    overflow-x: auto;
-  }
-  
-  .output-cell {
-    background-color: black;
-    color: #1a4d1a;
-  }
-  
+.code-cell, .output-cell, .markdown-cell {
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  font-family: "Fira Code", monospace;
+}
+
+.code-cell {
+  background-color: #f7f7f7;
+  color: #111;
+  border: 1px solid #ccc;
+}
+
+.output-cell {
+  background-color: #fcfcfc;
+  color: #1a4d1a;
+  border-left: 4px solid #4caf50;
+}
+
+.markdown-cell {
+  background-color: #fefefe;
+  font-size: 1.1rem;
+  font-family: "Open Sans", sans-serif;
+  color: #222;
+  border-left: 4px solid #dcdcdc;
+}
+
+.prompt {
+  color: #888;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
