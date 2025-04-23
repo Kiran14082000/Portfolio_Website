@@ -7,22 +7,33 @@ import "../NotebookCell.css";
 
 const NotebookCell = ({ type, content }) => {
   const render = () => {
-    if (type === "code") return <CodeCell code={content} />;
-    if (type === "markdown") return <MarkdownCell text={content} />;
-    if (type === "output") return <OutputCell output={content} />;
+    if (type === "code") {
+      return (
+        <div className="code-cell">
+          <div className="prompt">In [ ]:</div>
+          <pre><code>{content}</code></pre>
+        </div>
+      );
+    }
+    if (type === "output") {
+      return (
+        <div className="output-cell">
+          <div className="prompt">Out [ ]:</div>
+          <pre><code>{content}</code></pre>
+        </div>
+      );
+    }
+    if (type === "markdown") {
+      return (
+        <div className="markdown-cell">
+          <p>{content}</p>
+        </div>
+      );
+    }
     return null;
   };
 
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
-      className="notebook-wrapper"
-    >
-      {render()}
-    </motion.div>
-  );
+  return <div className="notebook-wrapper">{render()}</div>;
 };
 
 export default NotebookCell;

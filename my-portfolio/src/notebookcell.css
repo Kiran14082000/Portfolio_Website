@@ -1,14 +1,13 @@
 .notebook-wrapper {
   background: #ffffff;
-  border: 1px solid #dcdcdc;
-  border-radius: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
   padding: 1rem;
-  margin-bottom: 1.5rem;
-  transition: all 0.3s ease;
+  margin: 30px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
 }
 
 .code-cell, .output-cell, .markdown-cell {
-  margin-bottom: 1rem;
   padding: 0.75rem 1rem;
   border-radius: 5px;
   font-family: "Fira Code", monospace;
@@ -16,26 +15,26 @@
 
 .code-cell {
   background-color: #f7f7f7;
-  color: #111;
-  border: 1px solid #ccc;
+  border-left: 4px solid #ccc;
+  white-space: pre-wrap;
 }
 
 .output-cell {
-  background-color: #fcfcfc;
-  color: #1a4d1a;
-  border-left: 4px solid #4caf50;
+  background-color: #eafaea;
+  border-left: 4px solid #28a745;
+  color: #2c662d;
+  white-space: pre-wrap;
 }
 
 .markdown-cell {
-  background-color: #fefefe;
-  font-size: 1.1rem;
-  font-family: "Open Sans", sans-serif;
-  color: #222;
-  border-left: 4px solid #dcdcdc;
+  background-color: #fafafa;
+  border-left: 4px solid #007bff;
+  color: #333;
+  line-height: 1.6;
 }
 
 .prompt {
-  color: #888;
   font-weight: bold;
-  margin-bottom: 0.4rem;
+  color: #888;
+  margin-bottom: 0.5rem;
 }
